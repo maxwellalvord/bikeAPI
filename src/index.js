@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './css/styles.css';
+import './css/styles.css';
 import amenityChecker from './js/park-amenities.js';
 
 function clearFields() {
@@ -10,7 +10,8 @@ function clearFields() {
 }
 
 function getElements(response) {
-  if (response.data[0]) {
+  if (response.data) {
+    console.log(response.data[0]);
     $('#amenities').text(` ${response.data[0].description}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
