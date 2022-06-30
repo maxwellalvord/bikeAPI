@@ -17,14 +17,16 @@ function getElements(response) {
   }
 }
 
+async function makeApiCall(park) {
+  const response = await amenityChecker.getAmenities(park);
+  getElements(response);
+}
+
+
 $(document).ready(function() {
   $('#parkbtn').click(function() {
     let park = $('#park').val();
     clearFields();
-    amenityChecker.getAmenities(park)
-      .then(function(response){
-        console.log(response);
-        getElements(response)
-      });
+    makeApiCall(park);
   });
 });
