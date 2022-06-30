@@ -11,8 +11,12 @@ function clearFields() {
 
 function getElements(response) {
   if (response.data) {
-    console.log(response.data[0]);
-    $('#amenities').text(` ${response.data[0].description}`);
+    $('#descript').text(`${response.data[0].description} `);
+    $('#amenities').text(`${response.data[0].activities[0].name}`);
+    $('#amenities').append(`, ${response.data[0].activities[1].name}`);
+    $('#amenities').append(`, ${response.data[0].activities[2].name}`);
+    $('#amenities').append(`, ${response.data[0].activities[3].name}`);
+    $('#amenities').append(`, ${response.data[0].activities[4].name}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
@@ -20,6 +24,7 @@ function getElements(response) {
 
 async function makeApiCall(park) {
   const response = await amenityChecker.getAmenities(park);
+  console.log(response);
   getElements(response);
 }
 
