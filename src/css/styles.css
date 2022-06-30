@@ -29,3 +29,18 @@ img{
   background-color: #a23cbc;
   color: white;
 }
+
+.showTempMax{
+  background-color: rgb(194, 67, 38);
+  color: white;
+}
+
+.showTempMin{
+  background-color: rgb(14, 123, 178);
+  color: white;
+}
+
+.showTemp{
+  background-color: rgb(179, 189, 34);
+  color: white;
+}
